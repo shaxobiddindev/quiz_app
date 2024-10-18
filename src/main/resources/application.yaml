@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: warehouse
+  datasource:
+    url: jdbc:postgresql://localhost:5432/quiz
+    username: postgres
+    password: root123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+my_token:
+    key: shaxobiddindevjknsjnvfwefbnwujnosdwssedfwef
+    expire_time: 86400000
