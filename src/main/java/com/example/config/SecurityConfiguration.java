@@ -43,8 +43,6 @@ public class SecurityConfiguration {
                 .permitAll()
                 .requestMatchers(HttpMethod.POST)
                 .hasRole("ADMIN")
-                .anyRequest()
-                .authenticated()
                 .requestMatchers("/test/**")
                 .hasAnyRole( "USER")
                 .anyRequest()
