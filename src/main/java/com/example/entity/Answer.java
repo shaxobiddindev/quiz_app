@@ -12,9 +12,9 @@ import lombok.NoArgsConstructor;
 public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String answer;
-    private Boolean isTrue;
+    private Boolean isCorrect;
     @ManyToOne
     private Quiz quiz;
 }

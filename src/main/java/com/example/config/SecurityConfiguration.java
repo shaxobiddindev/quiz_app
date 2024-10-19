@@ -41,8 +41,12 @@ public class SecurityConfiguration {
                 .authorizeRequests()
                 .requestMatchers(Util.openUrl)
                 .permitAll()
-                .requestMatchers(HttpMethod.POST,  "/test")
+                .requestMatchers(HttpMethod.POST)
                 .hasRole("ADMIN")
+                .anyRequest()
+                .authenticated()
+                .requestMatchers("/test/**")
+                .hasAnyRole( "USER")
                 .anyRequest()
                 .authenticated();
         return http.build();
