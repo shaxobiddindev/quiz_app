@@ -1,5 +1,5 @@
 package com.example.payload;
 
-public record ResultDTO (Long id, String result) {
+public record ResultDTO (Integer quizNum, String result) {
 
 }

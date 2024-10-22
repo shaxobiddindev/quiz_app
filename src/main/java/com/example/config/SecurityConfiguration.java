@@ -41,10 +41,10 @@ public class SecurityConfiguration {
                 .authorizeRequests()
                 .requestMatchers(Util.openUrl)
                 .permitAll()
+                .requestMatchers(HttpMethod.POST,"/test/**")
+                .hasAnyRole( "USER")
                 .requestMatchers(HttpMethod.POST)
                 .hasRole("ADMIN")
-                .requestMatchers("/test/**")
-                .hasAnyRole( "USER")
                 .anyRequest()
                 .authenticated();
         return http.build();

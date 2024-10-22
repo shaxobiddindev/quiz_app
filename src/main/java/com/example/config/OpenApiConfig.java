@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @OpenAPIDefinition(
         info = @Info(
                 title = "QUIZ APP",
-                description = "this aplicition ",
+                description = "this application for test performance!",
                 version = "1.0"
 
         ),

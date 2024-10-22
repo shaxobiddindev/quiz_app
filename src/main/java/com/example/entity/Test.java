@@ -5,17 +5,24 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
-import java.util.List;
+import java.sql.Timestamp;
+
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class Quiz {
+public class Test {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String question;
+    @ManyToOne
+    private User user;
+    @CreationTimestamp
+    private Timestamp createTime;
+    private Integer time;
+    private Boolean isFinished = false;
 }

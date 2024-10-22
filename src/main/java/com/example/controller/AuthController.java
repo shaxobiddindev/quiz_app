@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.config.JwtProvider;
 import com.example.entity.User;
+import com.example.payload.SignInDTO;
 import com.example.payload.UserDTO;
 import com.example.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -39,7 +40,7 @@ public class AuthController {
     }
 
     @PostMapping("/sign-in")
-    public ResponseEntity<?> signIn(@RequestBody UserDTO userDTO){
+    public ResponseEntity<?> signIn(@RequestBody SignInDTO userDTO){
         User user = userRepository.findByUsername(userDTO.username()).orElseThrow(RuntimeException::new);
         if (!passwordEncoder.matches(userDTO.password(),user.getPassword())){
             throw new RuntimeException("Wrong password or username");

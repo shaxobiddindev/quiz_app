@@ -6,16 +6,24 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class Quiz {
+public class UserAnswer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String question;
+    private Integer quizNum;
+    @ManyToOne
+    private Quiz quiz;
+    private String answer;
+    private String correctAnswer;
+    private Boolean isCorrect;
+    @ManyToOne
+    private Test test;
+    @ManyToOne
+    private User user;
+
 }
